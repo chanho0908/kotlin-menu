@@ -7,6 +7,7 @@ enum class Exception(private val msg: String) {
     ONLY_DIGIT("0 이상의 정수만 입력해주세요."),
     INVALID_RANGE("코치의 이름은 최소 2글자, 최대 4글자 사이의 숫자로 입력해주세요."),
     INVALID_SIZE("코치는 최소 2명, 최대 5명까지 입력해주세요"),
+    DUPLICATE_NOT_EAT_MENU("못 먹는 메뉴는 중복 될 수 없어요."),
     INVALID_NOT_EAT_MENU_SIZE("못 먹는 메뉴는 최대 두 개까지 입력해주세요.");
 
     override fun toString(): String = "$ERROR $msg"
