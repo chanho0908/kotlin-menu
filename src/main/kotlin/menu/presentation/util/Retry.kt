@@ -1,6 +1,6 @@
 package menu.presentation.util
 
-fun<T> retryWhenNoException(action : () -> T): T{
+fun <T> retryWhenNoException(action : () -> T): T{
     while (true){
         try {
             return action()

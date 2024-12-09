@@ -2,7 +2,6 @@ package menu.doamin.usecase
 
 import menu.doamin.model.MenuBoard.Companion.getMenuBoard
 import camp.nextstep.edu.missionutils.Randoms
-import menu.presentation.vm.model.UiEvent
 
 class RecommendMenuUseCase {
     operator fun invoke(

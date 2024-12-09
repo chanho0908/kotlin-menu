@@ -1,6 +1,12 @@
 package menu.doamin.rule
 
 import menu.doamin.model.Category.Companion.getCategoryKind
+import menu.doamin.rule.NumericConstants.MONDAY
+import menu.doamin.rule.NumericConstants.TUESDAY
+import menu.doamin.rule.NumericConstants.WEDNESDAY
+import menu.doamin.rule.NumericConstants.THURSDAY
+import menu.doamin.rule.NumericConstants.FRIDAY
+
 
 enum class Output(val msg: String) {
     WELCOME("점심 메뉴 추천을 시작합니다."),
@@ -22,22 +28,22 @@ enum class Output(val msg: String) {
             weeklyCategory: List<Int>
         ): String {
             return CATEGORY.msg.format(
-                getCategoryKind(weeklyCategory[0]),
-                getCategoryKind(weeklyCategory[1]),
-                getCategoryKind(weeklyCategory[2]),
-                getCategoryKind(weeklyCategory[3]),
-                getCategoryKind(weeklyCategory[4])
+                getCategoryKind(weeklyCategory[MONDAY.value]),
+                getCategoryKind(weeklyCategory[TUESDAY.value]),
+                getCategoryKind(weeklyCategory[WEDNESDAY.value]),
+                getCategoryKind(weeklyCategory[THURSDAY.value]),
+                getCategoryKind(weeklyCategory[FRIDAY.value])
             )
         }
 
         fun recommendFormat(name: String, recommend: List<String>): String {
             return RECOMMEND.msg.format(
                 name,
-                recommend[0],
-                recommend[1],
-                recommend[2],
-                recommend[3],
-                recommend[4],
+                recommend[MONDAY.value],
+                recommend[TUESDAY.value],
+                recommend[WEDNESDAY.value],
+                recommend[THURSDAY.value],
+                recommend[FRIDAY.value],
 
             )
         }

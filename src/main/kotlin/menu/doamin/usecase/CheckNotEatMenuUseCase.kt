@@ -1,6 +1,7 @@
 package menu.doamin.usecase
 
 import menu.doamin.rule.Exception
+import menu.doamin.rule.NumericConstants.MAX_NOT_EAT_MENU_SIZE
 
 class CheckNotEatMenuUseCase {
 
@@ -22,12 +23,12 @@ class CheckNotEatMenuUseCase {
     }
 
     private fun spliteratorValidate(spliterator: List<String>) {
-        isInvalidCoachSize(spliterator)
+        isInvalidSize(spliterator)
         isDuplicated(spliterator)
     }
 
-    private fun isInvalidCoachSize(spliterator: List<String>) {
-        val max = 2
+    private fun isInvalidSize(spliterator: List<String>) {
+        val max = MAX_NOT_EAT_MENU_SIZE.value
         require(spliterator.size <= max) { Exception.INVALID_NOT_EAT_MENU_SIZE }
     }
 

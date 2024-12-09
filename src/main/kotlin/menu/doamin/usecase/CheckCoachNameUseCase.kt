@@ -1,6 +1,10 @@
 package menu.doamin.usecase
 
 import menu.doamin.rule.Exception
+import menu.doamin.rule.NumericConstants.MAX_COACH_SIZE
+import menu.doamin.rule.NumericConstants.MIN_COACH_SIZE
+import menu.doamin.rule.NumericConstants.MAX_COACH_NAME_LENGTH
+import menu.doamin.rule.NumericConstants.MIN_COACH_NAME_LENGTH
 
 class CheckCoachNameUseCase {
     operator fun invoke(input: String): List<String> {
@@ -31,7 +35,7 @@ class CheckCoachNameUseCase {
     }
 
     private fun isInvalidCoachSize(spliterator: List<String>) {
-        val range = 2..5
+        val range = MIN_COACH_SIZE.value..MAX_COACH_SIZE.value
         require(spliterator.size in range) { Exception.INVALID_SIZE }
     }
 
@@ -41,7 +45,7 @@ class CheckCoachNameUseCase {
     }
 
     private fun isValidNameLength(spliterator: List<String>) {
-        val range = 2..4
+        val range = MIN_COACH_NAME_LENGTH.value..MAX_COACH_NAME_LENGTH.value
         require(spliterator.all { it.length in range }) {
             Exception.INVALID_RANGE
         }

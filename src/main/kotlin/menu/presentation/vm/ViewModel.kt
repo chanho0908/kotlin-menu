@@ -1,5 +1,6 @@
 package menu.presentation.vm
 
+import menu.doamin.rule.NumericConstants.WORKDAY
 import menu.doamin.rule.Output
 import menu.doamin.usecase.CheckCoachNameUseCase
 import menu.doamin.usecase.CheckNotEatMenuUseCase
@@ -49,7 +50,7 @@ class ViewModel(
     }
 
     private fun pickCategory() {
-        repeat(5) {
+        repeat(WORKDAY.value) {
             val category = pickCategoryUseCase(_state.category)
             val currentCategory = _state.category.toMutableList()
             currentCategory.add(category)
