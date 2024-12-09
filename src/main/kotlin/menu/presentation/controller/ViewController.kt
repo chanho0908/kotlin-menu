@@ -20,7 +20,7 @@ class ViewController(
         when (val event = viewModel.state.uiEvent) {
             is UiEvent.OnUiEventUserInputCoachName -> onUiEventUserInputCoachName(event.msg)
             is UiEvent.OnUiEventUserInputNotEatMenu -> onUiEventUserInputNotEatMenu(event.msg)
-            UiEvent.OnUiEventSetRecommendMenu -> onUiEventSetRecommendMenu()
+            is UiEvent.OnUiEventSetRecommendMenu -> onUiEventSetRecommendMenu(event.msg)
         }
     }
 
@@ -48,7 +48,7 @@ class ViewController(
         checkUiEvent()
     }
 
-    private fun onUiEventSetRecommendMenu(){
-
+    private fun onUiEventSetRecommendMenu(msg: String){
+        outputView.printMessage(msg)
     }
 }
