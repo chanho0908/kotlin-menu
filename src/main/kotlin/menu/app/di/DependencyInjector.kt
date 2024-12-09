@@ -1,5 +1,7 @@
 package menu.app.di
 
+import menu.doamin.usecase.CheckCoachNameUseCase
+import menu.doamin.usecase.CheckNotEatMenuUseCase
 import menu.presentation.controller.ViewController
 import menu.presentation.view.InputView
 import menu.presentation.view.OutputView
@@ -15,7 +17,9 @@ class DependencyInjector {
     }
 
     private fun injectViewModel(): ViewModel {
-        return ViewModel()
+        val checkCoachNameUseCase = CheckCoachNameUseCase()
+        val checkNotEatMenuUseCase = CheckNotEatMenuUseCase()
+        return ViewModel(checkCoachNameUseCase, checkNotEatMenuUseCase)
     }
 
     private fun injectInputView() = InputView()
