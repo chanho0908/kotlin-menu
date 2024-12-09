@@ -1,5 +1,8 @@
 package menu
 
+import menu.app.di.DependencyInjector
+
 fun main() {
-    // TODO: 프로그램 구현
+    val di = DependencyInjector()
+    di.injectViewController()
 }
